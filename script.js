@@ -3,6 +3,7 @@ let flipped; // État de la carte.
 let flippedCard = 0; // Compteur de cartes retournées.
 let check1 = ''; // Vérification des pairs dans la fonction isPair.
 let check2 = '';
+let validCards = 0; // Vérifie le nombre de cartes "validées".
 
 // Récupération des images via leur class name depuis le HTML.
 let deck = document.getElementsByClassName("card");
@@ -11,66 +12,57 @@ console.log(deck);
 // Cartes dans le HTML rendues réceptives à la fonction clickImg.
 for(let card of deck) {
     card.addEventListener("click", clickImg);
-}
+};
 
-// Assemblage des images avec leurs valeurs prédéfinies + variable flipped.
-/*for (let i in deck) {
-    deck[i].src = "img/Card" + cardsValue[i] + ".jpg";
-    deck[i].flipped = true;
-}
-
-// Flip les cartes via le click.
-function clickImg(e) {
-    console.log("Source :", e.target.src);
-    console.log("ID :", e.target.id);
-    console.log("BorderRadius :", e.target.style.borderRadius);
-    console.log("flipped :", e.target.flipped);
-
-    if (e.target.flipped = false) {
-        e.target.src = "img/" + e.target.id + ".jpg";
-        console.log("Flipped a été réglé sur True.");
-        e.target.flipped = true;
-        console.log("Flipped a été réglé sur True.");
-        return;
-    } else {
-        e.target.src = "img/Card.jpg";
-        e.target.style.border = "3px solid blue"
-        e.target.style.borderRadius = "15px";
-        console.log("Flipped a été réglé sur False.");
-        e.target.flipped = false;
-        console.log("Flipped status : " + e.target.flipped);
-        return;
-    };
-}*/
-
+// Distribue les images de dos de carte.
 for (let i in deck) {
     deck[i].src = "img/Card.jpg";
     deck[i].flipped = true;
 };
 
-function isPair() {
-    if (check1 === check2) {
-
+// Vérifie la condition de victoire lorsque la fonction est invoquée.
+function winCondition() {
+    if (validCards === deck.length) {
+        console.log('Congratulations !')
     }
 };
 
+// Vérifie les paires lorsque la fonction est invoquée et invoque winCondition.
+function isPair() {
+    if (check1 === check2 && check1 !== '' && check2 !== '') {
+        console.log("PAIR");
+        check1 = '';
+        check2 = '';
+        validCards += 2;
+        winCondition();
+    } else if (check1 !== '' && check2 !== '') {
+        console.log("NOT PAIR");
+        check1 = '';
+        check2 = '';
+    }
+};
+
+// Sélectionne les cartes et invoque isPair.
 function clickImg(e) {
-    if (e.target.flipped = true && flippedCard < 2) {
+    if (e.target.flipped = true && flippedCard <= 1) {
         e.target.flipped = false;
         e.target.src = "img/" + e.target.id + ".jpg";
         flippedCard += 1;
         console.log(e.target.id);
+            if (check1 === '') {
+                check1 = e.target.src;
+            } else if (check1 !== '' && check2 === '') {
+                check2 = e.target.src;
+                isPair();
+            };
+            
     } else {
         for (let i in deck) {
-            
+
             deck[i].src = "img/Card.jpg";
             deck[i].flipped = true;
             flippedCard = 0;
             
         }
     }
-}
-
-
-console.log("Flipped status : " + deck[0].flipped);
-
+};
