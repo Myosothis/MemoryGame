@@ -1,0 +1,33 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: blanchedalmond;
+}
+
+h1{
+	font-size : 64px; 
+}
+
+.board{
+	display:grid;
+	grid-template-columns: repeat(6,1fr);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.start{
+	padding: 10px 20px;
+    font-size: 16px;
+
+}
+
+.card {
+    width: 120px;
+    padding: 20px;
+}
