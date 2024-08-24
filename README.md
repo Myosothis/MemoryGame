@@ -1,7 +1,7 @@
 Todo : 
 
-- Flip cards
+- Pop-up win
+- Prettier board
 - Shuffle cards
-- Win condition
 - Beta test
 - Get rich
