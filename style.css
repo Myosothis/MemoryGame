@@ -33,8 +33,11 @@ h1{
     margin: 10px;
 }
 
-.hidden{
+.hide{
     display: none!important;
+}
+
+.show{
     position: fixed;
     top: 0;
     left: 0;
