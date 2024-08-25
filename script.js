@@ -84,6 +84,15 @@ function clickImg(e) {
     }
 };
 
+// Mélanger les cartes.
+function shuffle() {
+      for(i=0; i < deck.length;++i){
+        const j = Math.floor(Math.random() * (i + 1));
+        [deck[i].id, deck[j].id] = [deck[j].id, deck[i].id];
+      };
+      return deck;
+};
+
 // Recommencer le jeu.
 function resetGame(){
     for (let i in deck) {
@@ -97,6 +106,8 @@ flippedCard = 0;
 check1 = '';
 check2 = '';
 validCards = 0;
+
+shuffle();
 
 document.getElementById('victoire').classList.remove('show');
 
