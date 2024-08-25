@@ -1,6 +1,6 @@
 Todo : 
 
 - Prettier board
-- Shuffle cards
+- Fix Bug
 - Beta test
 - Get rich
