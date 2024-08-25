@@ -49,12 +49,14 @@ function isPair(){
         winCondition();
     } else {
         console.log("NOT PAIR");
+        setTimeout(() => {
         for (let i in deck) {
             if (deck[i].lockCard !== true){
             deck[i].src = "img/Card.jpg";
             deck[i].flipped = true;
             }
             }
+        }, 1000);
     }
     check1 = '';
     check2 = '';
