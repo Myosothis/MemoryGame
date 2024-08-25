@@ -85,3 +85,4 @@ function resetGame(){
     document.getElementById('victoire').classList.remove('show');
 
 }
+document.querySelector('.start').addEventListener('click', resetGame);
