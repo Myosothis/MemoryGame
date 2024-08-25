@@ -24,7 +24,7 @@ h1{
 .start{
 	padding: 10px 20px;
     font-size: 16px;
-
+	z-index: 100;
 }
 
 .card{
