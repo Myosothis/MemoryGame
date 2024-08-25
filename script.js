@@ -67,3 +67,21 @@ function clickImg(e) {
         }
     }
 };
+
+// Recommencer le jeu.
+function resetGame(){
+        for (let i in deck) {
+
+            deck[i].src = "img/Card.jpg";
+            deck[i].flipped = true;
+            flippedCard = 0;
+            
+        }
+    flippedCard = 0;
+    check1 = '';
+    check2 = '';
+    validCards = 0;
+
+    document.getElementById('victoire').classList.remove('show');
+
+}
