@@ -24,6 +24,7 @@ for (let i in deck) {
 function winCondition() {
     if (validCards === deck.length) {
         console.log('Congratulations !')
+        document.getElementById('victoire').classList.add('show');
     }
 };
 
