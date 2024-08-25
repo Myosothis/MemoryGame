@@ -31,53 +31,52 @@ function winCondition() {
 };
 
 // Vérifie les paires lorsque la fonction est invoquée et invoque winCondition.
-function isPair() {
-    if (check1 === check2 && check1 !== '' && check2 !== '') {
+function isPair(){
+    if (check1 === check2) {
         console.log("PAIR");
-        check1 = '';
-        check2 = '';
         validCards += 2;
         for (let i in deck) {
-            if (deck[i].shownCard = true) {
-                shownCard = false;
-                lockCard = true;
-                deck.splice;
-            } else {
-            deck[i].src = "img/Card.jpg";
-            deck[i].flipped = true;
-            flippedCard = 0;
+            if (deck[i].lockCard !== true) {
+                if (deck[i].shownCard == true){
+                    deck[i].shownCard = false;
+                    deck[i].lockCard = true;
+                } else {
+                deck[i].src = "img/Card.jpg";
+                deck[i].flipped = true;
+                }
             }
         };
         winCondition();
-    } else if (check1 !== '' && check2 !== '') {
+    } else {
         console.log("NOT PAIR");
-        check1 = '';
-        check2 = '';
         for (let i in deck) {
+            if (deck[i].lockCard !== true){
             deck[i].src = "img/Card.jpg";
             deck[i].flipped = true;
             }
+            }
     }
+    check1 = '';
+    check2 = '';
 };
 
 // Sélectionne les cartes et invoque isPair.
 function clickImg(e) {
     for (let i in deck) {
-        if (shownCard = true) {
+        if (shownCard == true) {
            removeEventListener("click", clickImg);
         }
     }
-    if (e.target.flipped = true && flippedCard <= 1) {
+    if (e.target.flipped == true && flippedCard <= 1) {
+        flippedCard += 1;
         e.target.flipped = false;
         e.target.src = "img/" + e.target.id + ".jpg";
-        flippedCard += 1;
+        e.target.shownCard = true;
         console.log(e.target.id);
             if (check1 === '') {
                 check1 = e.target.src;
-                e.target.shownCard = true;
             } else if (check1 !== '' && check2 === '') {
                 check2 = e.target.src;
-                e.target.shownCard = true;
                 isPair();
                 flippedCard = 0;  
             };
@@ -91,7 +90,7 @@ function resetGame(){
 
         deck[i].src = "img/Card.jpg";
         deck[i].flipped = true;
-        flippedCard = 0;
+        deck[i].lockCard = null;
 
     }
 flippedCard = 0;
