@@ -88,3 +88,28 @@ td:hover>img:first-child{
 td:hover>img:last-child{
     display: block;
 }
+
+.titre {
+    font-family: "Bungee Tint", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+.big-dice-svg {
+    position: absolute;
+    top: 102px;
+    right: 102px;
+    height:5em;
+    width:5em;
+    transform: rotate(12deg);
+}
+
+.big-dice-svg2 {
+    position: absolute;
+    top: 91px;
+    right: 60px;
+    height:5em;
+    width:5em;
+    transform: rotate(34deg);
+}
