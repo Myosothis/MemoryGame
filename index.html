@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeu des paires</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Jeu des Paires</h1>
+    <h1 class="titre">Jeu des Paires</h1>
 
-    <div class="board">
+        <div class="board">
                 <img id="Card1" class="card" src="img/Card.jpg">
                 <img id="Card2" class="card" src="img/Card.jpg">
                 <img id="Card3" class="card" src="img/Card.jpg">
@@ -28,15 +31,16 @@
                 <img id="Card7" class="card" src="img/Card.jpg">
                 <img id="Card8" class="card" src="img/Card.jpg">
                 <img id="Card9" class="card" src="img/Card.jpg">
-    </div>    
-    <div id="victoire" class="hide">
-        <div class="popup">
-            <p>Vous avez gagné !</p>
+        </div>    
+        <div id="victoire" class="hide">
+            <div class="popup">
+                <p>Vous avez gagné !</p>
+            </div>
         </div>
-    </div>
     <button class="start">Recommencer</button>
+    <img class="big-dice-svg" src="img/big-dice-svg.svg">
+    <img class="big-dice-svg2" src="img/big-dice-svg.svg">
 
-
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+    </body>
 </html>
